@@ -79,7 +79,11 @@
         switch (evt.keyCode) {
             case 38 :
                 if (checkCollide()){
-                    alert('va chạm')
+                   document.getElementById('anh_meo').style.boxShadow = 'red 5px 5px 5px';
+                   document.getElementById('meo2').style.boxShadow = 'red 5px 5px 5px';
+                }else {
+                    document.getElementById('anh_meo').style.boxShadow = 'blue 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'blue 5px 5px 5px';
                 }
                 moveTop()
 
@@ -88,7 +92,11 @@
             case 39 :
 
                 if (checkCollide()){
-                    alert('va chạm')
+                    document.getElementById('anh_meo').style.boxShadow = 'red 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'red 5px 5px 5px';
+                }else {
+                    document.getElementById('anh_meo').style.boxShadow = 'blue 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'blue 5px 5px 5px';
                 }
                 moveRight()
 
@@ -97,13 +105,21 @@
             case 40 :
                 moveDow()
                 if (checkCollide()){
-                    alert('va chạm')
+                    document.getElementById('anh_meo').style.boxShadow = 'red 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'red 5px 5px 5px';
+                }else {
+                    document.getElementById('anh_meo').style.boxShadow = 'blue 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'blue 5px 5px 5px';
                 }
                 break;
             case 37:
                 moveLeft()
                 if (checkCollide()){
-                    alert('va chạm')
+                    document.getElementById('anh_meo').style.boxShadow = 'red 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'red 5px 5px 5px';
+                }else {
+                    document.getElementById('anh_meo').style.boxShadow = 'blue 5px 5px 5px';
+                    document.getElementById('meo2').style.boxShadow = 'blue 5px 5px 5px';
                 }
         }
 
