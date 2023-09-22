@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+
+
+<img id="anh_meo" style="position: absolute; height: 100px; width: 100px" src="image/Hinh-anh-meo-cute-ngo-nghin.webp"/>
+<img id="meo2" style="top: 200px; left: 500px; width: 100px; height: 100px; position: absolute" src="image/meo-cam-dao.jpg"/>
+
+<button onclick="moveRight()">sang phải</button>
+<button onclick="moveLeft()">sang trái</button>
+<button onclick="moveTop()">lên</button>
+<button onclick="moveDow()">xuống</button>
+<button onclick="moveDiagonal()">chéo phải</button>
+<script>
+    let image;
+    let image2;
+
+    function init() {
+        image = document.getElementById('anh_meo');
+        image2 = document.getElementById('meo2');
+        image.style.left = 0;
+        image.style.top = '100px';
+    }
+
+    init()
+
+    console.log(image.style.left + 'left')
+    console.log(image.style.top + 'top')
+    console.log(image.style.width, 'width')
+
+    function moveRight() {
+        console.log(image.style.left, 'phải')
+        image.style.left = parseInt(image.style.left) + 10 + 'px';
+
+    }
+
+    function moveLeft() {
+
+        image.style.left = parseInt(image.style.left) - 10 + 'px';
+
+    }
+
+    function moveTop() {
+        image.style.top = parseInt(image.style.top) - 10 + 'px';
+    }
+
+    function moveDow() {
+        image.style.top = parseInt(image.style.top) + 10 + 'px';
+    }
+
+    function moveDiagonal() {
+        image.style.left = parseInt(image.style.left) + 10 + 'px';
+        image.style.top = parseInt(image.style.top) + 10 + 'px';
+    }
+
+
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+    // window.onload = docReady
+    function moveSelection(evt) {
+        // console.log(evt);
+        console.log(image.style.left, ' >>>phải')
+
+        function checkCollide() {
+            if ((parseInt(image.style.top) + parseInt(image.style.height)) >= parseInt(image2.style.top) && parseInt(image.style.top) <= parseInt(image2.style.top) + parseInt(image2.style.height)
+                && (parseInt(image.style.left) + parseInt(image.style.width)) >= parseInt(image2.style.left) && (parseInt(image2.style.left) + parseInt(image2.style.width)) >= parseInt(image.style.left)) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        switch (evt.keyCode) {
+            case 38 :
+                if (checkCollide()){
+                    alert('va chạm')
+                }
+                moveTop()
+
+                console.log(image.style.top + ' top')
+                break;
+            case 39 :
+
+                if (checkCollide()){
+                    alert('va chạm')
+                }
+                moveRight()
+
+
+                break;
+            case 40 :
+                moveDow()
+                if (checkCollide()){
+                    alert('va chạm')
+                }
+                break;
+            case 37:
+                moveLeft()
+                if (checkCollide()){
+                    alert('va chạm')
+                }
+        }
+
+    }
+
+</script>
+</body>
+</html>
